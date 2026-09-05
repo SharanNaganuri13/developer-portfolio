@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sharannaganuri13.github.io/developer-portfolio/sitemap.xml
