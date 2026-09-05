@@ -1,12 +1,10 @@
-import type { Profile } from "@/types/profile";
+const basePath =
+  process.env.NODE_ENV === "production"
+    ? "/developer-portfolio"
+    : "";
 
-/**
- * Single source of truth for the portfolio.
- * Populated from Sharan Naganuri's resume.
- *
- * The canonical site URL is not stored here — it comes from the deployment
- * (NEXT_PUBLIC_SITE_URL, or the host provided by the platform). See utils/site.ts.
- */
+import type { Profile } from "@/types/profile";
+    
 export const profile: Profile = {
   name: "Sharan Naganuri",
   firstName: "Sharan",
@@ -15,9 +13,9 @@ export const profile: Profile = {
   location: "Bengaluru, Karnataka",
   email: "naganurisharan@gmail.com",
   linkedIn: "https://www.linkedin.com/in/smn13",
-  resumeHref: "/Sharan-Naganuri-Resume.pdf",
+  resumeHref: `{basePath}/Sharan-Naganuri-Resume.pdf`,
   photo: {
-    src: "/sharan-naganuri.jpg",
+    src: `${basePath}/sharan-naganuri.jpg`,
     alt: "Portrait of Sharan Naganuri",
     width: 767,
     height: 1024,
@@ -87,7 +85,7 @@ export const profile: Profile = {
       role: "Java Full Stack Engineer",
       monogram: "TCS",
       logo: {
-        src: "/logos/tcs.png",
+        src: `${basePath}/logos/tcs.png`,
         alt: "Tata Consultancy Services logo",
         width: 420,
         height: 121,

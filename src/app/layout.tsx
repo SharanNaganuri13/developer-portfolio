@@ -1,3 +1,8 @@
+const basePath =
+  process.env.NODE_ENV === "production"
+    ? "/developer-portfolio"
+    : "";
+
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Newsreader, Syne } from "next/font/google";
 import { profile } from "@/data/profile";
@@ -48,7 +53,7 @@ export const metadata: Metadata = {
     description: profile.seo.description,
     creator: profile.seo.twitterHandle,
   },
-  icons: { icon: "/favicon.svg" },
+ icons: { icon: `${basePath}/favicon.svg`},
 };
 
 export const viewport: Viewport = {
